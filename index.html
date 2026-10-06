@@ -1,135 +1,1456 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hassan Tijjani | ICT & Consulting</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-        }
+  <meta name="description"
+    content="Hassan Tijjani — Humanitarian Data, MEAL, Information Management and ICT Professional.">
 
-        header {
-            background: #0b1f3a;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+  <title>Hassan Tijjani | Humanitarian Data • MEAL • ICT</title>
 
-        header h1 {
-            font-size: 45px;
-            margin: 0;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
-        header h2 {
-            font-size: 25px;
-            margin: 15px 0;
-        }
+  <style>
+    :root {
+      --bg: #06111f;
+      --bg2: #0a1728;
+      --card: rgba(15, 31, 52, 0.72);
+      --card-solid: #0d1d31;
+      --blue: #1683ff;
+      --cyan: #43c7ff;
+      --white: #f7fbff;
+      --text: #c7d5e5;
+      --muted: #8192a7;
+      --border: rgba(255,255,255,.09);
+      --glow: rgba(22,131,255,.25);
+      --radius: 22px;
+      --max: 1180px;
+    }
 
-        header p {
-            font-size: 18px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 20px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h2 {
-            color: #0b1f3a;
-        }
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(22,131,255,.14), transparent 30%),
+        radial-gradient(circle at 10% 30%, rgba(67,199,255,.07), transparent 25%),
+        var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .service {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 200px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
+    img {
+      max-width: 100%;
+    }
 
-        footer {
-            background: #0b1f3a;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
 
-        a {
-            color: #0b1f3a;
-        }
-    </style>
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(6,17,31,.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      background: var(--blue);
+      border-radius: 10px;
+      color: white !important;
+    }
+
+    .nav-cta:hover {
+      box-shadow: 0 0 25px var(--glow);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: 120px;
+      background: rgba(22,131,255,.14);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid rgba(67,199,255,.25);
+      background: rgba(22,131,255,.08);
+      border-radius: 50px;
+      color: #8fdcff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #32d583;
+      box-shadow: 0 0 12px #32d583;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        opacity: .35;
+        transform: scale(.75);
+      }
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #ffffff, #55c9ff, #1683ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 12px 35px rgba(22,131,255,.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(22,131,255,.35);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(67,199,255,.5);
+      transform: translateY(-4px);
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      padding: 0 0 90px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,.025);
+    }
+
+    .stat {
+      padding: 28px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Manrope";
+      font-size: 30px;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Manrope";
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 45px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .about-text,
+    .about-card {
+      padding: 35px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      backdrop-filter: blur(15px);
+    }
+
+    .about-text p {
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-card h3 {
+      font-family: "Manrope";
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .about-card ul {
+      list-style: none;
+    }
+
+    .about-card li {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .about-card li::before {
+      content: "✓";
+      color: var(--cyan);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        145deg,
+        rgba(20,40,65,.75),
+        rgba(10,23,40,.7)
+      );
+      transition: .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -50px;
+      top: -50px;
+      background: var(--blue);
+      opacity: .08;
+      border-radius: 50%;
+      filter: blur(25px);
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      border-color: rgba(22,131,255,.45);
+      box-shadow: 0 20px 55px rgba(0,0,0,.25);
+    }
+
+    .service-number {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .service h3 {
+      font-family: "Manrope";
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(22,131,255,.035),
+          transparent
+        );
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      min-height: 310px;
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card-solid);
+      transition: .4s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      border-color: rgba(67,199,255,.35);
+      box-shadow: 0 25px 70px rgba(0,0,0,.3);
+    }
+
+    .project-number {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 55px;
+    }
+
+    .project h3 {
+      font-family: "Manrope";
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .project p {
+      color: var(--muted);
+      max-width: 500px;
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 50px;
+      color: #a9c0d8;
+      font-size: 11px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .project-link {
+      position: absolute;
+      right: 30px;
+      bottom: 28px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .skill-top span {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .skill-top small {
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 5px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: inherit;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .timeline {
+      border-left: 1px solid rgba(67,199,255,.3);
+      padding-left: 30px;
+    }
+
+    .experience {
+      position: relative;
+      margin-bottom: 42px;
+    }
+
+    .experience::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 20px var(--blue);
+    }
+
+    .experience small {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .experience h3 {
+      font-family: "Manrope";
+      font-size: 22px;
+      margin: 5px 0;
+    }
+
+    .experience h4 {
+      color: var(--cyan);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .experience p {
+      color: var(--muted);
+      max-width: 750px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      text-align: center;
+      padding: 80px 30px;
+      border: 1px solid rgba(22,131,255,.25);
+      border-radius: 30px;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(22,131,255,.14),
+          transparent 65%
+        ),
+        rgba(255,255,255,.025);
+    }
+
+    .cta h2 {
+      font-family: "Manrope";
+      font-size: clamp(34px, 5vw, 58px);
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 18px;
+    }
+
+    .socials a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .socials a:hover {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -2.5px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .project {
+        min-height: 340px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Hassan Tijjani</h1>
-    <h2>ICT & Consulting</h2>
-    <p>ICT Support | Data Management | Digital Solutions</p>
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      HASSAN<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li>
+        <a href="#contact" class="nav-cta">Let's Connect</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+  <div class="container">
+
+    <div class="availability">
+      <span class="dot"></span>
+      AVAILABLE FOR OPPORTUNITIES
+    </div>
+
+    <h1>
+      Humanitarian Data.
+      <br>
+      <span class="gradient">Technology.</span>
+      <br>
+      Real Impact.
+    </h1>
+
+    <p>
+      I'm <strong>Hassan Tijjani</strong> — a Humanitarian Data,
+      MEAL, Information Management and ICT professional helping
+      organizations turn field data and technology into better
+      decisions, stronger operations and measurable impact.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">
+        Explore My Work →
+      </a>
+
+      <a href="Hassan_Tijjani_CV.pdf" class="btn btn-outline" download>
+        Download CV
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/hassantijjani"
+        target="_blank"
+        class="btn btn-outline">
+        LinkedIn ↗
+      </a>
+    </div>
+
+  </div>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I provide practical ICT support, data management and digital solutions
-        for organizations, businesses and communities.
-    </p>
-</section>
 
-<section>
-    <h2>My Services</h2>
+<!-- =========================
+     STATS
+========================= -->
 
-    <div class="services">
+<div class="stats">
+  <div class="container">
 
-        <div class="service">
-            <h3>IT Support</h3>
-            <p>Technical support, troubleshooting and computer systems assistance.</p>
-        </div>
+    <div class="stats-grid reveal">
 
-        <div class="service">
-            <h3>Data Management</h3>
-            <p>Data collection, organization, quality assurance and reporting.</p>
-        </div>
+      <div class="stat">
+        <strong>8+</strong>
+        <span>Years Combined Experience</span>
+      </div>
 
-        <div class="service">
-            <h3>ICT Consulting</h3>
-            <p>Practical technology solutions to improve organizational operations.</p>
-        </div>
+      <div class="stat">
+        <strong>200+</strong>
+        <span>People Trained</span>
+      </div>
 
-        <div class="service">
-            <h3>Digital Transformation</h3>
-            <p>Helping organizations adopt better digital tools and processes.</p>
-        </div>
+      <div class="stat">
+        <strong>MEAL</strong>
+        <span>Data & Monitoring</span>
+      </div>
+
+      <div class="stat">
+        <strong>ICT</strong>
+        <span>Technology & Field Operations</span>
+      </div>
 
     </div>
-</section>
 
-<section>
-    <h2>Skills</h2>
-    <p>
-        IT Support, Microsoft Office, Excel, Data Management,
-        KoboToolbox, ODK and Database Management.
+  </div>
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-label">01 — ABOUT ME</div>
+
+    <h2 class="section-title">
+      Data, technology and<br>
+      field operations.
+    </h2>
+
+    <p class="section-description">
+      A multidisciplinary professional working at the intersection
+      of humanitarian operations, information management and ICT.
     </p>
+
+    <div class="about-grid reveal">
+
+      <div class="about-text">
+
+        <p>
+          My work combines <strong>digital data collection,
+          MEAL support, information management, database administration,
+          ICT support and field operations.</strong>
+        </p>
+
+        <p>
+          I have practical experience supporting community assessments,
+          beneficiary verification, data quality assurance, field teams,
+          digital survey workflows and technical systems.
+        </p>
+
+        <p>
+          My goal is simple: use technology and reliable information
+          to help organizations make better decisions and deliver
+          stronger programs.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <h3>What I Bring</h3>
+
+        <ul>
+          <li>Humanitarian field experience</li>
+          <li>Digital data collection</li>
+          <li>MEAL & DQA support</li>
+          <li>Information management</li>
+          <li>ICT troubleshooting</li>
+          <li>Database administration</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
-<section>
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:hassantijjani5@gmail.com">hassantijjani5@gmail.com</a></p>
+
+<!-- =========================
+     EXPERTISE
+========================= -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-label">02 — EXPERTISE</div>
+
+    <h2 class="section-title">
+      What I do.
+    </h2>
+
+    <p class="section-description">
+      Practical digital, data and field capabilities built for
+      humanitarian, nonprofit, government and development environments.
+    </p>
+
+    <div class="services-grid">
+
+      <article class="service reveal">
+        <div class="service-number">01</div>
+        <h3>MEAL & Monitoring</h3>
+        <p>
+          Monitoring support, community assessments,
+          field interviews, verification and reporting.
+        </p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-number">02</div>
+        <h3>Information Management</h3>
+        <p>
+          Data organization, validation, cleaning,
+          reporting workflows and information systems.
+        </p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-number">03</div>
+        <h3>Digital Data Collection</h3>
+        <p>
+          KoboToolbox, ODK, Enketo, mobile surveys,
+          digital forms and field data workflows.
+        </p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-number">04</div>
+        <h3>ICT Support</h3>
+        <p>
+          Hardware, software, networking, operating systems
+          and practical technical troubleshooting.
+        </p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-number">05</div>
+        <h3>Data Management</h3>
+        <p>
+          Data quality assurance, database administration,
+          verification, backups and structured archives.
+        </p>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-number">06</div>
+        <h3>Digital Transformation</h3>
+        <p>
+          Helping organizations improve workflows through
+          practical technology and digital solutions.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="projects">
+
+  <div class="container">
+
+    <div class="section-label">03 — SELECTED PROJECTS</div>
+
+    <h2 class="section-title">
+      Work that demonstrates<br>
+      capability.
+    </h2>
+
+    <p class="section-description">
+      Selected examples of data, technology and digital work
+      aligned with humanitarian and organizational needs.
+    </p>
+
+    <div class="projects-grid">
+
+      <article class="project reveal">
+
+        <div class="project-number">PROJECT / 01</div>
+
+        <h3>Digital Data Collection System</h3>
+
+        <p>
+          Designed and supported digital field data collection
+          workflows using KoboToolbox and ODK for structured,
+          reliable and field-ready information gathering.
+        </p>
+
+        <div class="tags">
+          <span class="tag">KoboToolbox</span>
+          <span class="tag">ODK</span>
+          <span class="tag">DQA</span>
+          <span class="tag">Field Data</span>
+        </div>
+
+        <span class="project-link">
+          DATA COLLECTION →
+        </span>
+
+      </article>
+
+
+      <article class="project reveal">
+
+        <div class="project-number">PROJECT / 02</div>
+
+        <h3>Data Verification & Management</h3>
+
+        <p>
+          Structured data verification, cleaning and quality
+          workflows designed to improve record consistency,
+          reduce errors and strengthen reporting.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Excel</span>
+          <span class="tag">Access</span>
+          <span class="tag">Validation</span>
+          <span class="tag">DQA</span>
+        </div>
+
+        <span class="project-link">
+          DATA MANAGEMENT →
+        </span>
+
+      </article>
+
+
+      <article class="project reveal">
+
+        <div class="project-number">PROJECT / 03</div>
+
+        <h3>ICT Systems & User Support</h3>
+
+        <p>
+          Practical ICT support covering hardware,
+          software, networking, user assistance and
+          digital systems administration.
+        </p>
+
+        <div class="tags">
+          <span class="tag">ICT Support</span>
+          <span class="tag">Networks</span>
+          <span class="tag">Hardware</span>
+          <span class="tag">Software</span>
+        </div>
+
+        <span class="project-link">
+          ICT SYSTEMS →
+        </span>
+
+      </article>
+
+
+      <article class="project reveal">
+
+        <div class="project-number">PROJECT / 04</div>
+
+        <h3>Hassan ICT & Consulting</h3>
+
+        <p>
+          Personal technology and consulting brand focused
+          on ICT support, data solutions, digital transformation
+          and professional technology services.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Consulting</span>
+          <span class="tag">ICT</span>
+          <span class="tag">Digital Solutions</span>
+        </div>
+
+        <span class="project-link">
+          DIGITAL SOLUTIONS →
+        </span>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">04 — TECHNICAL TOOLKIT</div>
+
+    <h2 class="section-title">
+      Tools I work with.
+    </h2>
+
+    <p class="section-description">
+      A practical toolkit covering data collection, analytics,
+      information management and ICT systems.
+    </p>
+
+    <div class="skills">
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>KoboToolbox / ODK</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:92%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Data Quality & Validation</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:90%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Microsoft Excel</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:88%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Database Management</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:86%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>ICT Support</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:90%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Information Management</span>
+          <small>Advanced</small>
+        </div>
+        <div class="bar"><span style="width:88%"></span></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-label">05 — EXPERIENCE</div>
+
+    <h2 class="section-title">
+      Professional journey.
+    </h2>
+
+    <div class="timeline">
+
+      <div class="experience reveal">
+
+        <small>2025</small>
+
+        <h3>Society for Family Health — SFH</h3>
+
+        <h4>Lead Field Enumerator & Digital Data Specialist</h4>
+
+        <p>
+          Supported digital field data collection, household and
+          community surveys, data quality checks and technical
+          support across Maiduguri and surrounding LGAs.
+        </p>
+
+      </div>
+
+
+      <div class="experience reveal">
+
+        <small>2024</small>
+
+        <h3>NairaGuard</h3>
+
+        <h4>Field Operations & Data Verification Specialist</h4>
+
+        <p>
+          Supported beneficiary verification, digital workflows,
+          field deployment, community coordination and data
+          confidentiality.
+        </p>
+
+      </div>
+
+
+      <div class="experience reveal">
+
+        <small>2018 — 2019</small>
+
+        <h3>GDJSS Ali Marami Housing Estate</h3>
+
+        <h4>Lead ICT Systems & Data Administrator</h4>
+
+        <p>
+          Managed ICT support, systems troubleshooting,
+          databases, reporting and digital user training.
+          Trained more than 200 students and staff.
+        </p>
+
+      </div>
+
+
+      <div class="experience reveal">
+
+        <small>2017 — 2018</small>
+
+        <h3>SAM Center</h3>
+
+        <h4>Database Administrator & Data Systems Analyst</h4>
+
+        <p>
+          Supported database administration, data audits,
+          validation, backups, access controls and structured
+          digital archiving.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="cta reveal">
+
+      <div class="section-label">06 — LET'S WORK TOGETHER</div>
+
+      <h2>
+        Have a mission?<br>
+        <span class="gradient">Let's build impact.</span>
+      </h2>
+
+      <p>
+        I'm open to opportunities in humanitarian organizations,
+        NGOs, government projects, ICT, data management,
+        MEAL, information management and remote roles.
+      </p>
+
+      <div class="hero-buttons" style="justify-content:center">
+
+        <a
+          href="mailto:Hassantijjani5@gmail.com"
+          class="btn btn-primary">
+          Email Me →
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/hassantijjani"
+          target="_blank"
+          class="btn btn-outline">
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="https://github.com/hassantijjani5-droid"
+          target="_blank"
+          class="btn btn-outline">
+          GitHub ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-    <p>© 2026 Hassan Tijjani - ICT & Consulting</p>
+
+  <div class="container footer-inner">
+
+    <p>
+      © 2026 Hassan Tijjani. All rights reserved.
+    </p>
+
+    <div class="socials">
+
+      <a href="https://www.linkedin.com/in/hassantijjani" target="_blank">
+        LinkedIn
+      </a>
+
+      <a href="https://github.com/hassantijjani5-droid" target="_blank">
+        GitHub
+      </a>
+
+      <a href="mailto:Hassantijjani5@gmail.com">
+        Email
+      </a>
+
+    </div>
+
+  </div>
+
 </footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const revealObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+
+
+  // Add shadow to navigation when scrolling
+
+  const nav = document.querySelector("nav");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+      nav.style.boxShadow = "0 10px 35px rgba(0,0,0,.25)";
+    } else {
+      nav.style.boxShadow = "none";
+    }
+
+  });
+
+</script>
 
 </body>
 </html>
