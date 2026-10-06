@@ -5,30 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Hassan Tijjani — Humanitarian Data, MEAL, Information Management and ICT Professional.">
+    content="Hassan Tijjani — Humanitarian Data, MEAL, Information Management, ICT Support and Digital Solutions Professional serving NGOs, humanitarian organizations, government and development programs.">
 
-  <title>Hassan Tijjani | Humanitarian Data • MEAL • ICT</title>
+  <meta name="keywords"
+    content="Hassan Tijjani, Humanitarian Data, MEAL, ICT Support, Information Management, NGO, UN, Nigeria, Data Collection, KoboToolbox, ODK, Government Technology">
+
+  <meta name="author" content="Hassan Tijjani">
+
+  <title>Hassan Tijjani | Humanitarian Data • MEAL • ICT • Digital Solutions</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
+
     :root {
-      --bg: #06111f;
-      --bg2: #0a1728;
-      --card: rgba(15, 31, 52, 0.72);
-      --card-solid: #0d1d31;
+      --bg: #050d18;
+      --bg2: #091525;
+      --card: rgba(13, 30, 51, 0.78);
+      --card-solid: #0b1a2d;
+
       --blue: #1683ff;
-      --cyan: #43c7ff;
-      --white: #f7fbff;
-      --text: #c7d5e5;
-      --muted: #8192a7;
+      --blue2: #0066d6;
+      --cyan: #42c9ff;
+
+      --white: #f8fbff;
+      --text: #c8d6e5;
+      --muted: #8293a8;
+
+      --green: #32d583;
+
       --border: rgba(255,255,255,.09);
-      --glow: rgba(22,131,255,.25);
+      --border-blue: rgba(22,131,255,.30);
+
+      --glow: rgba(22,131,255,.30);
+
       --radius: 22px;
       --max: 1180px;
     }
+
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       margin: 0;
@@ -38,17 +61,55 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       font-family: "Inter", sans-serif;
+
       background:
-        radial-gradient(circle at 80% 10%, rgba(22,131,255,.14), transparent 30%),
-        radial-gradient(circle at 10% 30%, rgba(67,199,255,.07), transparent 25%),
-        var(--bg);
+        radial-gradient(
+          circle at 85% 5%,
+          rgba(22,131,255,.16),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 5% 35%,
+          rgba(66,201,255,.07),
+          transparent 25%
+        ),
+        linear-gradient(
+          180deg,
+          #050d18 0%,
+          #071321 50%,
+          #050d18 100%
+        );
+
       color: var(--white);
       line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+      pointer-events: none;
+      opacity: .25;
+      z-index: -1;
     }
 
     a {
@@ -60,13 +121,18 @@
       max-width: 100%;
     }
 
+    button {
+      font-family: inherit;
+    }
+
     .container {
       width: min(92%, var(--max));
       margin: auto;
     }
 
+
     /* =========================
-       NAVBAR
+       NAVIGATION
     ========================= */
 
     nav {
@@ -74,13 +140,18 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(6,17,31,.72);
-      backdrop-filter: blur(18px);
+
+      background: rgba(5,13,24,.78);
+      backdrop-filter: blur(20px);
+
       border-bottom: 1px solid var(--border);
+
+      transition: .3s ease;
     }
 
     .nav-inner {
       height: 76px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -88,7 +159,7 @@
 
     .logo {
       font-family: "Manrope", sans-serif;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 800;
       letter-spacing: -1px;
     }
@@ -99,15 +170,15 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
       align-items: center;
+      gap: 28px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       transition: .3s;
     }
 
@@ -116,16 +187,26 @@
     }
 
     .nav-cta {
-      padding: 10px 18px;
+      padding: 10px 17px;
       background: var(--blue);
       border-radius: 10px;
       color: white !important;
     }
 
     .nav-cta:hover {
-      box-shadow: 0 0 25px var(--glow);
       transform: translateY(-2px);
+      box-shadow: 0 0 28px var(--glow);
     }
+
+    .mobile-menu {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
 
     /* =========================
        HERO
@@ -133,118 +214,212 @@
 
     .hero {
       min-height: 100vh;
+
       display: flex;
       align-items: center;
-      padding-top: 110px;
+
+      padding-top: 120px;
+
       position: relative;
+      overflow: hidden;
     }
 
     .hero::before {
       content: "";
+
       position: absolute;
-      width: 420px;
-      height: 420px;
-      right: -150px;
-      top: 120px;
-      background: rgba(22,131,255,.14);
-      filter: blur(100px);
+
+      width: 500px;
+      height: 500px;
+
+      right: -180px;
+      top: 100px;
+
+      background: rgba(22,131,255,.16);
+
+      filter: blur(110px);
+
       border-radius: 50%;
+
       pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      left: -150px;
+      bottom: 0;
+
+      background: rgba(66,201,255,.08);
+
+      filter: blur(100px);
+
+      border-radius: 50%;
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .availability {
       display: inline-flex;
       align-items: center;
       gap: 9px;
+
       padding: 8px 14px;
-      border: 1px solid rgba(67,199,255,.25);
+
+      border: 1px solid rgba(67,199,255,.28);
+
       background: rgba(22,131,255,.08);
+
       border-radius: 50px;
+
       color: #8fdcff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .5px;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
       margin-bottom: 25px;
     }
 
     .dot {
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
-      background: #32d583;
-      box-shadow: 0 0 12px #32d583;
+
+      background: var(--green);
+
+      box-shadow: 0 0 14px var(--green);
+
       animation: pulse 1.8s infinite;
     }
 
     @keyframes pulse {
+
       50% {
         opacity: .35;
         transform: scale(.75);
       }
+
     }
 
     .hero h1 {
-      max-width: 900px;
+      max-width: 950px;
+
       font-family: "Manrope", sans-serif;
+
       font-size: clamp(48px, 7vw, 88px);
-      line-height: .98;
+
+      line-height: .97;
+
       letter-spacing: -4px;
+
       margin-bottom: 28px;
     }
 
     .gradient {
-      background: linear-gradient(90deg, #ffffff, #55c9ff, #1683ff);
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #55c9ff 48%,
+          #1683ff 100%
+        );
+
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
+
       color: var(--text);
+
       font-size: 18px;
-      line-height: 1.8;
+
+      line-height: 1.85;
+
       margin-bottom: 35px;
+    }
+
+    .hero p strong {
+      color: white;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 14px;
+      gap: 13px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       gap: 9px;
+
       padding: 14px 22px;
+
       border-radius: 12px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .3s;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      transition: .3s ease;
+
+      cursor: pointer;
     }
 
     .btn-primary {
-      background: var(--blue);
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--blue2)
+        );
+
       color: white;
-      box-shadow: 0 12px 35px rgba(22,131,255,.2);
+
+      box-shadow:
+        0 12px 35px rgba(22,131,255,.22);
     }
 
     .btn-primary:hover {
       transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(22,131,255,.35);
+
+      box-shadow:
+        0 18px 45px rgba(22,131,255,.38);
     }
 
     .btn-outline {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,.03);
+
+      background: rgba(255,255,255,.035);
+
       color: white;
     }
 
     .btn-outline:hover {
-      border-color: rgba(67,199,255,.5);
+      border-color: rgba(67,199,255,.55);
+
+      background: rgba(22,131,255,.08);
+
       transform: translateY(-4px);
     }
+
 
     /* =========================
        STATS
@@ -256,15 +431,24 @@
 
     .stats-grid {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       border: 1px solid var(--border);
+
       border-radius: var(--radius);
+
       overflow: hidden;
+
       background: rgba(255,255,255,.025);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.18);
     }
 
     .stat {
-      padding: 28px;
+      padding: 30px;
+
       border-right: 1px solid var(--border);
     }
 
@@ -274,46 +458,68 @@
 
     .stat strong {
       display: block;
+
       font-family: "Manrope";
+
       font-size: 30px;
+
       margin-bottom: 4px;
+
+      color: white;
     }
 
     .stat span {
       color: var(--muted);
-      font-size: 13px;
+
+      font-size: 12px;
+      font-weight: 600;
     }
+
 
     /* =========================
        SECTIONS
     ========================= */
 
     section {
-      padding: 105px 0;
+      padding: 110px 0;
     }
 
     .section-label {
       color: var(--blue);
-      font-size: 12px;
+
+      font-size: 11px;
+
       font-weight: 800;
-      letter-spacing: 2px;
+
+      letter-spacing: 2.5px;
+
       text-transform: uppercase;
-      margin-bottom: 12px;
+
+      margin-bottom: 13px;
     }
 
     .section-title {
       font-family: "Manrope";
-      font-size: clamp(32px, 4vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -2px;
+
+      font-size: clamp(32px, 4vw, 54px);
+
+      line-height: 1.04;
+
+      letter-spacing: -2.5px;
+
       margin-bottom: 18px;
     }
 
     .section-description {
-      max-width: 700px;
+      max-width: 720px;
+
       color: var(--muted);
+
       margin-bottom: 45px;
+
+      font-size: 15px;
     }
+
 
     /* =========================
        ABOUT
@@ -321,34 +527,56 @@
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 1.2fr .8fr;
-      gap: 35px;
+
+      gap: 25px;
+
       align-items: stretch;
     }
 
     .about-text,
     .about-card {
-      padding: 35px;
+
+      padding: 38px;
+
       border: 1px solid var(--border);
+
       background: var(--card);
+
       border-radius: var(--radius);
+
       backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.15);
     }
 
     .about-text p {
       color: var(--text);
-      margin-bottom: 18px;
+
+      margin-bottom: 20px;
+
+      font-size: 15px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
     }
 
     .about-card {
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
     }
 
     .about-card h3 {
       font-family: "Manrope";
-      font-size: 24px;
+
+      font-size: 25px;
+
       margin-bottom: 18px;
     }
 
@@ -357,78 +585,174 @@
     }
 
     .about-card li {
-      padding: 11px 0;
+      padding: 12px 0;
+
       border-bottom: 1px solid var(--border);
+
       color: var(--text);
+
+      font-size: 14px;
+    }
+
+    .about-card li:last-child {
+      border-bottom: none;
     }
 
     .about-card li::before {
       content: "✓";
+
       color: var(--cyan);
+
       margin-right: 10px;
-      font-weight: bold;
+
+      font-weight: 900;
     }
 
+
     /* =========================
-       SERVICES
+       CAREER TARGETS
+    ========================= */
+
+    .target-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .target {
+      padding: 22px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,40,65,.7),
+          rgba(10,23,40,.6)
+        );
+
+      transition: .3s;
+    }
+
+    .target:hover {
+      transform: translateY(-5px);
+
+      border-color: var(--border-blue);
+    }
+
+    .target-icon {
+      font-size: 22px;
+
+      margin-bottom: 12px;
+    }
+
+    .target h3 {
+      font-family: "Manrope";
+
+      font-size: 16px;
+
+      margin-bottom: 7px;
+    }
+
+    .target p {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       EXPERTISE
     ========================= */
 
     .services-grid {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 18px;
     }
 
     .service {
       padding: 30px;
+
       border: 1px solid var(--border);
+
       border-radius: var(--radius);
-      background: linear-gradient(
-        145deg,
-        rgba(20,40,65,.75),
-        rgba(10,23,40,.7)
-      );
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,40,65,.75),
+          rgba(10,23,40,.7)
+        );
+
       transition: .35s;
+
       position: relative;
+
       overflow: hidden;
     }
 
     .service::after {
       content: "";
+
       position: absolute;
-      width: 120px;
-      height: 120px;
-      right: -50px;
-      top: -50px;
+
+      width: 150px;
+      height: 150px;
+
+      right: -70px;
+      top: -70px;
+
       background: var(--blue);
+
       opacity: .08;
+
       border-radius: 50%;
+
       filter: blur(25px);
     }
 
     .service:hover {
       transform: translateY(-8px);
-      border-color: rgba(22,131,255,.45);
-      box-shadow: 0 20px 55px rgba(0,0,0,.25);
+
+      border-color: rgba(22,131,255,.5);
+
+      box-shadow:
+        0 25px 65px rgba(0,0,0,.3);
     }
 
     .service-number {
       color: var(--blue);
+
       font-weight: 800;
-      font-size: 13px;
+
+      font-size: 12px;
+
       margin-bottom: 22px;
     }
 
     .service h3 {
       font-family: "Manrope";
-      font-size: 21px;
+
+      font-size: 20px;
+
       margin-bottom: 12px;
     }
 
     .service p {
       color: var(--muted);
-      font-size: 14px;
+
+      font-size: 13px;
     }
+
 
     /* =========================
        PROJECTS
@@ -446,71 +770,125 @@
 
     .projects-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+
+      gap: 20px;
     }
 
     .project {
-      min-height: 310px;
+      min-height: 330px;
+
       position: relative;
+
       overflow: hidden;
+
       padding: 32px;
+
       border: 1px solid var(--border);
+
       border-radius: var(--radius);
+
       background: var(--card-solid);
+
       transition: .4s;
+    }
+
+    .project::before {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      right: -110px;
+      bottom: -110px;
+
+      border-radius: 50%;
+
+      background: rgba(22,131,255,.08);
+
+      filter: blur(30px);
     }
 
     .project:hover {
       transform: translateY(-8px);
-      border-color: rgba(67,199,255,.35);
-      box-shadow: 0 25px 70px rgba(0,0,0,.3);
+
+      border-color: rgba(67,199,255,.4);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,.3);
     }
 
     .project-number {
       color: var(--blue);
+
       font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 55px;
+
+      font-size: 12px;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 50px;
     }
 
     .project h3 {
       font-family: "Manrope";
-      font-size: 28px;
+
+      font-size: 27px;
+
       margin-bottom: 12px;
     }
 
     .project p {
       color: var(--muted);
-      max-width: 500px;
-      font-size: 14px;
+
+      max-width: 520px;
+
+      font-size: 13px;
     }
 
     .tags {
       display: flex;
+
       flex-wrap: wrap;
-      gap: 8px;
+
+      gap: 7px;
+
       margin-top: 22px;
     }
 
     .tag {
       border: 1px solid var(--border);
+
       padding: 5px 10px;
+
       border-radius: 50px;
+
       color: #a9c0d8;
-      font-size: 11px;
+
+      font-size: 10px;
+
       background: rgba(255,255,255,.025);
     }
 
     .project-link {
       position: absolute;
+
       right: 30px;
+
       bottom: 28px;
+
       color: var(--cyan);
-      font-size: 12px;
+
+      font-size: 11px;
+
       font-weight: 800;
-      letter-spacing: .5px;
+
+      letter-spacing: .7px;
     }
+
 
     /* =========================
        SKILLS
@@ -518,45 +896,67 @@
 
     .skills {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+
+      gap: 15px;
     }
 
     .skill {
       padding: 20px 22px;
+
       border: 1px solid var(--border);
+
       border-radius: 14px;
+
       background: rgba(255,255,255,.025);
     }
 
     .skill-top {
       display: flex;
+
       justify-content: space-between;
+
       margin-bottom: 10px;
     }
 
     .skill-top span {
       font-size: 13px;
+
       font-weight: 700;
     }
 
     .skill-top small {
       color: var(--muted);
+
+      font-size: 11px;
     }
 
     .bar {
       height: 5px;
+
       border-radius: 10px;
+
       background: rgba(255,255,255,.08);
+
       overflow: hidden;
     }
 
     .bar span {
       display: block;
+
       height: 100%;
-      background: linear-gradient(90deg, var(--blue), var(--cyan));
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--blue),
+          var(--cyan)
+        );
+
       border-radius: inherit;
     }
+
 
     /* =========================
        EXPERIENCE
@@ -564,48 +964,111 @@
 
     .timeline {
       border-left: 1px solid rgba(67,199,255,.3);
+
       padding-left: 30px;
     }
 
     .experience {
       position: relative;
-      margin-bottom: 42px;
+
+      margin-bottom: 48px;
+
+      padding-bottom: 5px;
     }
 
     .experience::before {
       content: "";
+
       position: absolute;
+
       left: -37px;
+
       top: 6px;
+
       width: 12px;
       height: 12px;
+
       border-radius: 50%;
+
       background: var(--blue);
-      box-shadow: 0 0 20px var(--blue);
+
+      box-shadow:
+        0 0 20px var(--blue);
     }
 
     .experience small {
       color: var(--blue);
-      font-weight: 700;
+
+      font-weight: 800;
+
+      font-size: 12px;
     }
 
     .experience h3 {
       font-family: "Manrope";
+
       font-size: 22px;
+
       margin: 5px 0;
     }
 
     .experience h4 {
       color: var(--cyan);
-      font-size: 14px;
+
+      font-size: 13px;
+
       margin-bottom: 10px;
     }
 
     .experience p {
       color: var(--muted);
-      max-width: 750px;
+
+      max-width: 800px;
+
       font-size: 14px;
     }
+
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .cert-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .cert {
+      padding: 25px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,.025);
+    }
+
+    .cert strong {
+      display: block;
+
+      color: white;
+
+      font-family: "Manrope";
+
+      font-size: 16px;
+
+      margin-bottom: 7px;
+    }
+
+    .cert span {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
 
     /* =========================
        CTA
@@ -613,30 +1076,47 @@
 
     .cta {
       text-align: center;
-      padding: 80px 30px;
-      border: 1px solid rgba(22,131,255,.25);
+
+      padding: 85px 30px;
+
+      border: 1px solid rgba(22,131,255,.28);
+
       border-radius: 30px;
+
       background:
         radial-gradient(
           circle at center,
-          rgba(22,131,255,.14),
+          rgba(22,131,255,.16),
           transparent 65%
         ),
         rgba(255,255,255,.025);
+
+      box-shadow:
+        0 30px 90px rgba(0,0,0,.18);
     }
 
     .cta h2 {
       font-family: "Manrope";
+
       font-size: clamp(34px, 5vw, 58px);
+
       letter-spacing: -2px;
+
+      line-height: 1.05;
+
       margin-bottom: 18px;
     }
 
     .cta p {
       color: var(--muted);
-      max-width: 620px;
+
+      max-width: 650px;
+
       margin: 0 auto 30px;
+
+      font-size: 14px;
     }
+
 
     /* =========================
        FOOTER
@@ -644,29 +1124,37 @@
 
     footer {
       padding: 35px 0;
+
       border-top: 1px solid var(--border);
     }
 
     .footer-inner {
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 20px;
     }
 
     footer p {
       color: var(--muted);
+
       font-size: 12px;
     }
 
     .socials {
       display: flex;
+
       gap: 18px;
     }
 
     .socials a {
       color: var(--muted);
-      font-size: 13px;
+
+      font-size: 12px;
+
       transition: .3s;
     }
 
@@ -674,30 +1162,83 @@
       color: var(--cyan);
     }
 
+
     /* =========================
        ANIMATIONS
     ========================= */
 
     .reveal {
       opacity: 0;
+
       transform: translateY(30px);
-      transition: .8s ease;
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
     }
 
     .reveal.active {
       opacity: 1;
+
       transform: translateY(0);
     }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    .mobile-nav {
+      display: none;
+
+      padding: 15px 0 22px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-nav a {
+      display: block;
+
+      padding: 11px 0;
+
+      color: var(--text);
+
+      font-size: 14px;
+
+      font-weight: 700;
+    }
+
 
     /* =========================
        MOBILE
     ========================= */
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
 
       .nav-links {
         display: none;
       }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .target-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 850px) {
 
       .hero h1 {
         letter-spacing: -2.5px;
@@ -715,20 +1256,17 @@
         border-bottom: 1px solid var(--border);
       }
 
-      .about-grid,
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
     }
+
 
     @media (max-width: 600px) {
 
       section {
-        padding: 75px 0;
+        padding: 78px 0;
       }
 
       .hero {
@@ -736,7 +1274,7 @@
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 47px;
       }
 
       .hero p {
@@ -745,12 +1283,15 @@
 
       .stats-grid,
       .services-grid,
-      .skills {
+      .skills,
+      .target-grid,
+      .cert-grid {
         grid-template-columns: 1fr;
       }
 
       .stat {
         border-right: none;
+
         border-bottom: 1px solid var(--border);
       }
 
@@ -759,24 +1300,39 @@
       }
 
       .project {
-        min-height: 340px;
+        min-height: 350px;
+      }
+
+      .about-text,
+      .about-card {
+        padding: 28px;
       }
 
       .footer-inner {
         flex-direction: column;
+
         text-align: center;
       }
+
+      .socials {
+        justify-content: center;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
 ========================= -->
 
-<nav>
+<nav id="navbar">
+
   <div class="container nav-inner">
 
     <a href="#" class="logo">
@@ -784,17 +1340,57 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Expertise</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
+
       <li>
-        <a href="#contact" class="nav-cta">Let's Connect</a>
+        <a href="#about">About</a>
       </li>
+
+      <li>
+        <a href="#services">Expertise</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#contact" class="nav-cta">
+          Let's Connect
+        </a>
+      </li>
+
     </ul>
 
+    <button
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="Open navigation">
+      ☰
+    </button>
+
   </div>
+
+
+  <div class="container mobile-nav" id="mobileNav">
+
+    <a href="#about">About</a>
+
+    <a href="#services">Expertise</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#experience">Experience</a>
+
+    <a href="#contact">Let's Connect</a>
+
+  </div>
+
 </nav>
+
 
 
 <!-- =========================
@@ -802,47 +1398,76 @@
 ========================= -->
 
 <header class="hero">
-  <div class="container">
+
+  <div class="container hero-content">
 
     <div class="availability">
+
       <span class="dot"></span>
-      AVAILABLE FOR OPPORTUNITIES
+
+      AVAILABLE FOR NGO • GOVERNMENT • ICT • REMOTE OPPORTUNITIES
+
     </div>
 
+
     <h1>
+
       Humanitarian Data.
+
       <br>
-      <span class="gradient">Technology.</span>
+
+      <span class="gradient">
+        Technology.
+      </span>
+
       <br>
+
       Real Impact.
+
     </h1>
 
+
     <p>
+
       I'm <strong>Hassan Tijjani</strong> — a Humanitarian Data,
-      MEAL, Information Management and ICT professional helping
-      organizations turn field data and technology into better
-      decisions, stronger operations and measurable impact.
+      MEAL, Information Management and ICT professional supporting
+      organizations with reliable data, digital systems,
+      field operations and technology-driven solutions.
+
     </p>
 
+
     <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">
+
+      <a
+        href="#projects"
+        class="btn btn-primary">
         Explore My Work →
       </a>
 
-      <a href="Hassan_Tijjani_CV.pdf" class="btn btn-outline" download>
+
+      <a
+        href="Hassan_Tijjani_CV.pdf"
+        class="btn btn-outline"
+        download>
         Download CV
       </a>
 
+
       <a
-        href="https://www.linkedin.com/in/hassantijjani"
+        href="https://www.linkedin.com/in/hasan-tijjani-40b210166/"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn btn-outline">
         LinkedIn ↗
       </a>
+
     </div>
 
   </div>
+
 </header>
+
 
 
 <!-- =========================
@@ -850,34 +1475,60 @@
 ========================= -->
 
 <div class="stats">
+
   <div class="container">
 
     <div class="stats-grid reveal">
 
       <div class="stat">
+
         <strong>8+</strong>
-        <span>Years Combined Experience</span>
+
+        <span>
+          Years Combined Professional Experience
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>200+</strong>
-        <span>People Trained</span>
+
+        <span>
+          Students & Staff Trained
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>MEAL</strong>
-        <span>Data & Monitoring</span>
+
+        <span>
+          Monitoring • Data Quality • Field Support
+        </span>
+
       </div>
 
+
       <div class="stat">
+
         <strong>ICT</strong>
-        <span>Technology & Field Operations</span>
+
+        <span>
+          Technology • Systems • Digital Operations
+        </span>
+
       </div>
 
     </div>
 
   </div>
+
 </div>
+
 
 
 <!-- =========================
@@ -885,55 +1536,117 @@
 ========================= -->
 
 <section id="about">
+
   <div class="container">
 
-    <div class="section-label">01 — ABOUT ME</div>
+    <div class="section-label">
+      01 — ABOUT ME
+    </div>
+
 
     <h2 class="section-title">
-      Data, technology and<br>
+      Data, technology and
+      <br>
       field operations.
     </h2>
 
+
     <p class="section-description">
-      A multidisciplinary professional working at the intersection
-      of humanitarian operations, information management and ICT.
+
+      A multidisciplinary professional working at the
+      intersection of humanitarian operations,
+      information management, data and ICT.
+
     </p>
 
+
     <div class="about-grid reveal">
+
 
       <div class="about-text">
 
         <p>
-          My work combines <strong>digital data collection,
-          MEAL support, information management, database administration,
-          ICT support and field operations.</strong>
+
+          My professional focus combines
+          <strong>
+            humanitarian data, MEAL support,
+            information management, digital data collection,
+            database administration and ICT support.
+          </strong>
+
         </p>
 
+
         <p>
-          I have practical experience supporting community assessments,
-          beneficiary verification, data quality assurance, field teams,
+
+          I have practical experience supporting
+          community assessments, beneficiary verification,
+          field data collection, data quality assurance,
           digital survey workflows and technical systems.
+
         </p>
 
+
         <p>
-          My goal is simple: use technology and reliable information
-          to help organizations make better decisions and deliver
-          stronger programs.
+
+          I work with organizations that need reliable
+          information, practical technology and strong
+          field execution to improve programs and
+          operational decision-making.
+
+        </p>
+
+
+        <p>
+
+          My approach is simple:
+          <strong>
+            collect better data, protect information,
+            support people and turn technology into impact.
+          </strong>
+
         </p>
 
       </div>
 
+
       <div class="about-card">
 
-        <h3>What I Bring</h3>
+        <h3>
+          What I Bring
+        </h3>
+
 
         <ul>
-          <li>Humanitarian field experience</li>
-          <li>Digital data collection</li>
-          <li>MEAL & DQA support</li>
-          <li>Information management</li>
-          <li>ICT troubleshooting</li>
-          <li>Database administration</li>
+
+          <li>
+            Humanitarian & field operations
+          </li>
+
+          <li>
+            Digital data collection
+          </li>
+
+          <li>
+            MEAL & data quality support
+          </li>
+
+          <li>
+            Information management
+          </li>
+
+          <li>
+            ICT troubleshooting & user support
+          </li>
+
+          <li>
+            Database administration
+          </li>
+
+          <li>
+            Data protection & confidentiality
+          </li>
+
         </ul>
 
       </div>
@@ -941,7 +1654,121 @@
     </div>
 
   </div>
+
 </section>
+
+
+
+<!-- =========================
+     CAREER TARGETS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      PROFESSIONAL FOCUS
+    </div>
+
+
+    <h2 class="section-title">
+      Built for mission-driven
+      <br>
+      organizations.
+    </h2>
+
+
+    <p class="section-description">
+
+      My experience and technical capabilities are positioned
+      for organizations operating across humanitarian,
+      development, public-sector and technology environments.
+
+    </p>
+
+
+    <div class="target-grid">
+
+
+      <article class="target reveal">
+
+        <div class="target-icon">
+          🌍
+        </div>
+
+        <h3>
+          NGOs & INGOs
+        </h3>
+
+        <p>
+          Humanitarian programs, field operations,
+          MEAL, data and information management.
+        </p>
+
+      </article>
+
+
+      <article class="target reveal">
+
+        <div class="target-icon">
+          🏛️
+        </div>
+
+        <h3>
+          Government
+        </h3>
+
+        <p>
+          Digital government, ICT support,
+          public-sector data and field programs.
+        </p>
+
+      </article>
+
+
+      <article class="target reveal">
+
+        <div class="target-icon">
+          💻
+        </div>
+
+        <h3>
+          ICT & Technology
+        </h3>
+
+        <p>
+          Technical support, systems administration,
+          data and digital solutions.
+        </p>
+
+      </article>
+
+
+      <article class="target reveal">
+
+        <div class="target-icon">
+          🌐
+        </div>
+
+        <h3>
+          Remote Work
+        </h3>
+
+        <p>
+          Remote data, technical support,
+          information management and operations.
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <!-- =========================
@@ -952,78 +1779,146 @@
 
   <div class="container">
 
-    <div class="section-label">02 — EXPERTISE</div>
+    <div class="section-label">
+      02 — EXPERTISE
+    </div>
+
 
     <h2 class="section-title">
       What I do.
     </h2>
 
+
     <p class="section-description">
-      Practical digital, data and field capabilities built for
-      humanitarian, nonprofit, government and development environments.
+
+      Practical digital, data and field capabilities
+      built for humanitarian, nonprofit, government
+      and development environments.
+
     </p>
+
 
     <div class="services-grid">
 
+
       <article class="service reveal">
-        <div class="service-number">01</div>
-        <h3>MEAL & Monitoring</h3>
+
+        <div class="service-number">
+          01
+        </div>
+
+        <h3>
+          MEAL & Monitoring
+        </h3>
+
         <p>
           Monitoring support, community assessments,
-          field interviews, verification and reporting.
+          field interviews, verification, data quality
+          and reporting support.
         </p>
+
       </article>
 
+
       <article class="service reveal">
-        <div class="service-number">02</div>
-        <h3>Information Management</h3>
+
+        <div class="service-number">
+          02
+        </div>
+
+        <h3>
+          Information Management
+        </h3>
+
         <p>
           Data organization, validation, cleaning,
-          reporting workflows and information systems.
+          reporting workflows and structured
+          information systems.
         </p>
+
       </article>
 
+
       <article class="service reveal">
-        <div class="service-number">03</div>
-        <h3>Digital Data Collection</h3>
+
+        <div class="service-number">
+          03
+        </div>
+
+        <h3>
+          Digital Data Collection
+        </h3>
+
         <p>
           KoboToolbox, ODK, Enketo, mobile surveys,
           digital forms and field data workflows.
         </p>
+
       </article>
 
+
       <article class="service reveal">
-        <div class="service-number">04</div>
-        <h3>ICT Support</h3>
+
+        <div class="service-number">
+          04
+        </div>
+
+        <h3>
+          ICT Support
+        </h3>
+
         <p>
-          Hardware, software, networking, operating systems
-          and practical technical troubleshooting.
+          Hardware, software, operating systems,
+          networking, user support and technical
+          troubleshooting.
         </p>
+
       </article>
 
+
       <article class="service reveal">
-        <div class="service-number">05</div>
-        <h3>Data Management</h3>
+
+        <div class="service-number">
+          05
+        </div>
+
+        <h3>
+          Data Management
+        </h3>
+
         <p>
           Data quality assurance, database administration,
           verification, backups and structured archives.
         </p>
+
       </article>
 
+
       <article class="service reveal">
-        <div class="service-number">06</div>
-        <h3>Digital Transformation</h3>
+
+        <div class="service-number">
+          06
+        </div>
+
+        <h3>
+          Digital Transformation
+        </h3>
+
         <p>
-          Helping organizations improve workflows through
-          practical technology and digital solutions.
+          Practical technology solutions that improve
+          organizational workflows, reporting and
+          operational efficiency.
         </p>
+
       </article>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1034,38 +1929,70 @@
 
   <div class="container">
 
-    <div class="section-label">03 — SELECTED PROJECTS</div>
+    <div class="section-label">
+      03 — SELECTED PROJECTS
+    </div>
+
 
     <h2 class="section-title">
-      Work that demonstrates<br>
+      Work that demonstrates
+      <br>
       capability.
     </h2>
 
+
     <p class="section-description">
-      Selected examples of data, technology and digital work
-      aligned with humanitarian and organizational needs.
+
+      Selected examples of data, technology and digital
+      work aligned with humanitarian, organizational
+      and public-sector needs.
+
     </p>
+
 
     <div class="projects-grid">
 
+
       <article class="project reveal">
 
-        <div class="project-number">PROJECT / 01</div>
+        <div class="project-number">
+          PROJECT / 01
+        </div>
 
-        <h3>Digital Data Collection System</h3>
+        <h3>
+          Digital Data Collection System
+        </h3>
 
         <p>
-          Designed and supported digital field data collection
-          workflows using KoboToolbox and ODK for structured,
-          reliable and field-ready information gathering.
+
+          Supported digital field data collection
+          workflows using KoboToolbox and ODK for
+          structured, reliable and field-ready
+          information gathering.
+
         </p>
 
+
         <div class="tags">
-          <span class="tag">KoboToolbox</span>
-          <span class="tag">ODK</span>
-          <span class="tag">DQA</span>
-          <span class="tag">Field Data</span>
+
+          <span class="tag">
+            KoboToolbox
+          </span>
+
+          <span class="tag">
+            ODK
+          </span>
+
+          <span class="tag">
+            DQA
+          </span>
+
+          <span class="tag">
+            Field Data
+          </span>
+
         </div>
+
 
         <span class="project-link">
           DATA COLLECTION →
@@ -1074,24 +2001,47 @@
       </article>
 
 
+
       <article class="project reveal">
 
-        <div class="project-number">PROJECT / 02</div>
+        <div class="project-number">
+          PROJECT / 02
+        </div>
 
-        <h3>Data Verification & Management</h3>
+        <h3>
+          Data Verification & Management
+        </h3>
 
         <p>
-          Structured data verification, cleaning and quality
-          workflows designed to improve record consistency,
-          reduce errors and strengthen reporting.
+
+          Structured data verification, cleaning and
+          quality workflows designed to improve record
+          consistency, identify errors and strengthen
+          reporting.
+
         </p>
 
+
         <div class="tags">
-          <span class="tag">Excel</span>
-          <span class="tag">Access</span>
-          <span class="tag">Validation</span>
-          <span class="tag">DQA</span>
+
+          <span class="tag">
+            Excel
+          </span>
+
+          <span class="tag">
+            Access
+          </span>
+
+          <span class="tag">
+            Validation
+          </span>
+
+          <span class="tag">
+            DQA
+          </span>
+
         </div>
+
 
         <span class="project-link">
           DATA MANAGEMENT →
@@ -1100,24 +2050,46 @@
       </article>
 
 
+
       <article class="project reveal">
 
-        <div class="project-number">PROJECT / 03</div>
+        <div class="project-number">
+          PROJECT / 03
+        </div>
 
-        <h3>ICT Systems & User Support</h3>
+        <h3>
+          ICT Systems & User Support
+        </h3>
 
         <p>
+
           Practical ICT support covering hardware,
           software, networking, user assistance and
           digital systems administration.
+
         </p>
 
+
         <div class="tags">
-          <span class="tag">ICT Support</span>
-          <span class="tag">Networks</span>
-          <span class="tag">Hardware</span>
-          <span class="tag">Software</span>
+
+          <span class="tag">
+            ICT Support
+          </span>
+
+          <span class="tag">
+            Networks
+          </span>
+
+          <span class="tag">
+            Hardware
+          </span>
+
+          <span class="tag">
+            Software
+          </span>
+
         </div>
+
 
         <span class="project-link">
           ICT SYSTEMS →
@@ -1126,23 +2098,46 @@
       </article>
 
 
+
       <article class="project reveal">
 
-        <div class="project-number">PROJECT / 04</div>
+        <div class="project-number">
+          PROJECT / 04
+        </div>
 
-        <h3>Hassan ICT & Consulting</h3>
+        <h3>
+          Hassan ICT & Consulting
+        </h3>
 
         <p>
-          Personal technology and consulting brand focused
-          on ICT support, data solutions, digital transformation
-          and professional technology services.
+
+          Technology and consulting initiative focused
+          on ICT support, data management, digital
+          solutions and practical technology services.
+
         </p>
 
+
         <div class="tags">
-          <span class="tag">Consulting</span>
-          <span class="tag">ICT</span>
-          <span class="tag">Digital Solutions</span>
+
+          <span class="tag">
+            ICT
+          </span>
+
+          <span class="tag">
+            Consulting
+          </span>
+
+          <span class="tag">
+            Data
+          </span>
+
+          <span class="tag">
+            Digital Solutions
+          </span>
+
         </div>
+
 
         <span class="project-link">
           DIGITAL SOLUTIONS →
@@ -1150,6 +2145,7 @@
 
       </article>
 
+
     </div>
 
   </div>
@@ -1157,80 +2153,174 @@
 </section>
 
 
+
 <!-- =========================
-     SKILLS
+     TECHNICAL SKILLS
 ========================= -->
 
 <section>
 
   <div class="container">
 
-    <div class="section-label">04 — TECHNICAL TOOLKIT</div>
+    <div class="section-label">
+      04 — TECHNICAL TOOLKIT
+    </div>
+
 
     <h2 class="section-title">
       Tools I work with.
     </h2>
 
+
     <p class="section-description">
-      A practical toolkit covering data collection, analytics,
-      information management and ICT systems.
+
+      A practical toolkit covering digital data collection,
+      analytics, information management, databases and
+      ICT systems.
+
     </p>
+
 
     <div class="skills">
 
-      <div class="skill">
-        <div class="skill-top">
-          <span>KoboToolbox / ODK</span>
-          <small>Advanced</small>
-        </div>
-        <div class="bar"><span style="width:92%"></span></div>
-      </div>
 
       <div class="skill">
+
         <div class="skill-top">
-          <span>Data Quality & Validation</span>
-          <small>Advanced</small>
+
+          <span>
+            KoboToolbox / ODK
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
         </div>
-        <div class="bar"><span style="width:90%"></span></div>
+
+        <div class="bar">
+          <span style="width:92%"></span>
+        </div>
+
       </div>
 
-      <div class="skill">
-        <div class="skill-top">
-          <span>Microsoft Excel</span>
-          <small>Advanced</small>
-        </div>
-        <div class="bar"><span style="width:88%"></span></div>
-      </div>
+
 
       <div class="skill">
+
         <div class="skill-top">
-          <span>Database Management</span>
-          <small>Advanced</small>
+
+          <span>
+            Data Quality & Validation
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
         </div>
-        <div class="bar"><span style="width:86%"></span></div>
+
+        <div class="bar">
+          <span style="width:90%"></span>
+        </div>
+
       </div>
 
-      <div class="skill">
-        <div class="skill-top">
-          <span>ICT Support</span>
-          <small>Advanced</small>
-        </div>
-        <div class="bar"><span style="width:90%"></span></div>
-      </div>
+
 
       <div class="skill">
+
         <div class="skill-top">
-          <span>Information Management</span>
-          <small>Advanced</small>
+
+          <span>
+            Microsoft Excel
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
         </div>
-        <div class="bar"><span style="width:88%"></span></div>
+
+        <div class="bar">
+          <span style="width:88%"></span>
+        </div>
+
       </div>
+
+
+
+      <div class="skill">
+
+        <div class="skill-top">
+
+          <span>
+            Database Management
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
+        </div>
+
+        <div class="bar">
+          <span style="width:86%"></span>
+        </div>
+
+      </div>
+
+
+
+      <div class="skill">
+
+        <div class="skill-top">
+
+          <span>
+            ICT Support
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
+        </div>
+
+        <div class="bar">
+          <span style="width:90%"></span>
+        </div>
+
+      </div>
+
+
+
+      <div class="skill">
+
+        <div class="skill-top">
+
+          <span>
+            Information Management
+          </span>
+
+          <small>
+            Advanced
+          </small>
+
+        </div>
+
+        <div class="bar">
+          <span style="width:88%"></span>
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1241,86 +2331,228 @@
 
   <div class="container">
 
-    <div class="section-label">05 — EXPERIENCE</div>
+    <div class="section-label">
+      05 — EXPERIENCE
+    </div>
+
 
     <h2 class="section-title">
       Professional journey.
     </h2>
 
+
+    <p class="section-description">
+
+      Experience across field data collection,
+      humanitarian operations, ICT systems,
+      databases and digital support.
+
+    </p>
+
+
     <div class="timeline">
 
+
       <div class="experience reveal">
 
-        <small>2025</small>
+        <small>
+          2025
+        </small>
 
-        <h3>Society for Family Health — SFH</h3>
+        <h3>
+          Society for Family Health — SFH
+        </h3>
 
-        <h4>Lead Field Enumerator & Digital Data Specialist</h4>
+        <h4>
+          Lead Field Enumerator & Digital Data Specialist
+        </h4>
 
         <p>
-          Supported digital field data collection, household and
-          community surveys, data quality checks and technical
-          support across Maiduguri and surrounding LGAs.
+
+          Supported digital field data collection,
+          household and community surveys, data quality
+          checks, field verification and technical support
+          across Maiduguri and surrounding LGAs.
+
         </p>
 
       </div>
 
 
+
       <div class="experience reveal">
 
-        <small>2024</small>
+        <small>
+          2024
+        </small>
 
-        <h3>NairaGuard</h3>
+        <h3>
+          NairaGuard
+        </h3>
 
-        <h4>Field Operations & Data Verification Specialist</h4>
+        <h4>
+          Field Operations & Data Verification Specialist
+        </h4>
 
         <p>
-          Supported beneficiary verification, digital workflows,
-          field deployment, community coordination and data
-          confidentiality.
+
+          Supported beneficiary verification, digital
+          workflows, field deployment, community
+          coordination and confidential handling of
+          operational information.
+
         </p>
 
       </div>
 
 
+
       <div class="experience reveal">
 
-        <small>2018 — 2019</small>
+        <small>
+          2018 — 2019
+        </small>
 
-        <h3>GDJSS Ali Marami Housing Estate</h3>
+        <h3>
+          GDJSS Ali Marami Housing Estate
+        </h3>
 
-        <h4>Lead ICT Systems & Data Administrator</h4>
+        <h4>
+          Lead ICT Systems & Data Administrator
+        </h4>
 
         <p>
+
           Managed ICT support, systems troubleshooting,
           databases, reporting and digital user training.
           Trained more than 200 students and staff.
+
         </p>
 
       </div>
+
 
 
       <div class="experience reveal">
 
-        <small>2017 — 2018</small>
+        <small>
+          2017 — 2018
+        </small>
 
-        <h3>SAM Center</h3>
+        <h3>
+          SAM Center
+        </h3>
 
-        <h4>Database Administrator & Data Systems Analyst</h4>
+        <h4>
+          Database Administrator & Data Systems Analyst
+        </h4>
 
         <p>
+
           Supported database administration, data audits,
-          validation, backups, access controls and structured
-          digital archiving.
+          validation, backups, access controls and
+          structured digital archiving.
+
         </p>
 
       </div>
+
 
     </div>
 
   </div>
 
 </section>
+
+
+
+<!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      PROFESSIONAL DEVELOPMENT
+    </div>
+
+
+    <h2 class="section-title">
+      Certifications & training.
+    </h2>
+
+
+    <p class="section-description">
+
+      Continuing professional development supporting
+      humanitarian data, digital operations and ICT work.
+
+    </p>
+
+
+    <div class="cert-grid">
+
+
+      <article class="cert reveal">
+
+        <strong>
+          Internet Skills for Everyday Use
+        </strong>
+
+        <span>
+          Certificate of Achievement • September 2026
+        </span>
+
+      </article>
+
+
+      <article class="cert reveal">
+
+        <strong>
+          Humanitarian Field Operations & Mobile Data Collection
+        </strong>
+
+        <span>
+          ODK • KoboToolbox • Digital Survey Workflows
+        </span>
+
+      </article>
+
+
+      <article class="cert reveal">
+
+        <strong>
+          Advanced Data Management & DQA
+        </strong>
+
+        <span>
+          Data Governance • Validation • Privacy • Confidentiality
+        </span>
+
+      </article>
+
+
+      <article class="cert reveal">
+
+        <strong>
+          Digital & ICT Professional Development
+        </strong>
+
+        <span>
+          ICT Support • Information Management • Digital Systems
+        </span>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <!-- =========================
@@ -1333,40 +2565,69 @@
 
     <div class="cta reveal">
 
-      <div class="section-label">06 — LET'S WORK TOGETHER</div>
+      <div class="section-label">
+        06 — LET'S WORK TOGETHER
+      </div>
+
 
       <h2>
-        Have a mission?<br>
-        <span class="gradient">Let's build impact.</span>
+
+        Have a mission?
+
+        <br>
+
+        <span class="gradient">
+          Let's build impact.
+        </span>
+
       </h2>
 
+
       <p>
-        I'm open to opportunities in humanitarian organizations,
-        NGOs, government projects, ICT, data management,
-        MEAL, information management and remote roles.
+
+        I'm open to opportunities with humanitarian
+        organizations, NGOs, government projects,
+        ICT teams, data and MEAL programs,
+        information management teams and remote employers.
+
       </p>
 
-      <div class="hero-buttons" style="justify-content:center">
+
+      <div
+        class="hero-buttons"
+        style="justify-content:center">
+
 
         <a
           href="mailto:Hassantijjani5@gmail.com"
           class="btn btn-primary">
+
           Email Me →
+
         </a>
 
+
         <a
-          href="https://www.linkedin.com/in/hassantijjani"
+          href="https://www.linkedin.com/in/hasan-tijjani-40b210166/"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-outline">
+
           LinkedIn ↗
+
         </a>
+
 
         <a
           href="https://github.com/hassantijjani5-droid"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-outline">
+
           GitHub ↗
+
         </a>
+
 
       </div>
 
@@ -1375,6 +2636,7 @@
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -1389,19 +2651,36 @@
       © 2026 Hassan Tijjani. All rights reserved.
     </p>
 
+
     <div class="socials">
 
-      <a href="https://www.linkedin.com/in/hassantijjani" target="_blank">
+
+      <a
+        href="https://www.linkedin.com/in/hasan-tijjani-40b210166/"
+        target="_blank"
+        rel="noopener noreferrer">
+
         LinkedIn
+
       </a>
 
-      <a href="https://github.com/hassantijjani5-droid" target="_blank">
+
+      <a
+        href="https://github.com/hassantijjani5-droid"
+        target="_blank"
+        rel="noopener noreferrer">
+
         GitHub
+
       </a>
+
 
       <a href="mailto:Hassantijjani5@gmail.com">
+
         Email
+
       </a>
+
 
     </div>
 
@@ -1410,47 +2689,129 @@
 </footer>
 
 
+
 <!-- =========================
      JAVASCRIPT
 ========================= -->
 
 <script>
 
-  const revealElements = document.querySelectorAll(".reveal");
+  /* =========================
+     SCROLL REVEAL
+  ========================= */
 
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    },
-    {
-      threshold: 0.12
-    }
-  );
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const revealObserver =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
 
   revealElements.forEach(element => {
+
     revealObserver.observe(element);
+
   });
 
 
-  // Add shadow to navigation when scrolling
 
-  const nav = document.querySelector("nav");
+  /* =========================
+     NAVIGATION SHADOW
+  ========================= */
+
+  const nav =
+    document.querySelector("#navbar");
+
 
   window.addEventListener("scroll", () => {
 
     if (window.scrollY > 30) {
-      nav.style.boxShadow = "0 10px 35px rgba(0,0,0,.25)";
+
+      nav.style.boxShadow =
+        "0 10px 40px rgba(0,0,0,.35)";
+
     } else {
+
       nav.style.boxShadow = "none";
+
     }
 
   });
 
+
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  const mobileMenu =
+    document.querySelector("#mobileMenu");
+
+  const mobileNav =
+    document.querySelector("#mobileNav");
+
+
+  mobileMenu.addEventListener("click", () => {
+
+    if (mobileNav.style.display === "block") {
+
+      mobileNav.style.display = "none";
+
+      mobileMenu.textContent = "☰";
+
+    } else {
+
+      mobileNav.style.display = "block";
+
+      mobileMenu.textContent = "✕";
+
+    }
+
+  });
+
+
+
+  /* =========================
+     CLOSE MOBILE MENU
+  ========================= */
+
+  document
+    .querySelectorAll("#mobileNav a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileNav.style.display = "none";
+
+        mobileMenu.textContent = "☰";
+
+      });
+
+    });
+
 </script>
+
 
 </body>
 </html>
