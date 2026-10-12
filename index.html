@@ -1,778 +1,414 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hassan Tijjani - Humanitarian Data, Information Management, MEAL and ICT Support Professional based in Nigeria.">
-  <meta name="theme-color" content="#071a33">
-  <title>Hassan Tijjani | Data Management, MEAL & ICT</title>
-
+  <title>Hassan Tijjani | Data & Information Management Professional</title>
   <style>
+    /* CSS RESET & VARIABLES */
     :root {
-      --navy: #071a33;
-      --blue: #1264d8;
-      --light-blue: #eaf2ff;
-      --white: #ffffff;
-      --text: #17243a;
-      --muted: #64748b;
-      --background: #f5f8fc;
-      --border: #e2e8f0;
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --text-dark: #1f2937;
+      --text-muted: #4b5563;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
     }
 
     a {
-      color: inherit;
+      color: var(--accent);
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
+    a:hover {
+      color: var(--primary);
+    }
+
+    /* CONTAINER & LAYOUT */
     .container {
-      width: min(1120px, 90%);
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
+    section {
+      padding: 80px 0;
+    }
+
+    /* HEADER / NAVIGATION */
     header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      height: 70px;
     }
 
     .logo {
-      font-size: 21px;
-      font-weight: 800;
-      letter-spacing: 0.3px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      color: var(--primary-dark);
     }
 
     .logo span {
-      color: #72b5ff;
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      font-size: 14px;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-      color: #72b5ff;
+      color: var(--accent);
     }
 
+    /* HERO SECTION */
     .hero {
-      background: linear-gradient(135deg, #071a33, #103c70);
-      color: var(--white);
-      padding: 100px 0 90px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 100px 0;
+      text-align: left;
     }
 
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .eyebrow {
-      color: #8dc5ff;
-      font-weight: bold;
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.12;
-      margin-bottom: 22px;
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      font-weight: 800;
     }
 
-    .hero h1 span {
-      color: #80bcff;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      color: #d9e7f8;
-      font-size: 18px;
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      max-width: 650px;
       margin-bottom: 30px;
     }
 
-    .buttons {
+    .hero-actions {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 22px;
-      border-radius: 7px;
-      font-weight: bold;
-      font-size: 14px;
-      transition: 0.25s ease;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
-      background: #ffffff;
-      color: var(--navy);
+      background-color: var(--accent);
+      color: #ffffff;
     }
 
     .btn-primary:hover {
-      background: #dcecff;
-      transform: translateY(-2px);
+      background-color: #1d4ed8;
+      color: #ffffff;
     }
 
-    .btn-outline {
-      border: 1px solid #8abfff;
-      color: white;
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
     }
 
-    .hero-note {
-      font-size: 14px;
-      color: #c5d8ef;
-    }
-
-    section {
-      padding: 75px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 35px;
-    }
-
-    .section-heading .eyebrow {
-      color: var(--blue);
+    /* SECTION HEADINGS */
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary-dark);
       margin-bottom: 8px;
     }
 
-    h2 {
-      font-size: clamp(28px, 4vw, 38px);
-      color: var(--navy);
-      line-height: 1.25;
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* EXPERTISE / CARDS */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary-dark);
       margin-bottom: 12px;
     }
 
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .about-text,
-    .info-card,
-    .service-card,
-    .project-card,
-    .contact-card {
-      background: white;
-      padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .about-text p + p {
-      margin-top: 15px;
-    }
-
-    .info-card h3,
-    .service-card h3,
-    .project-card h3 {
-      color: var(--navy);
-      margin-bottom: 12px;
-      font-size: 19px;
-    }
-
-    .info-list {
-      list-style: none;
-    }
-
-    .info-list li {
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    .info-list li:last-child {
-      border-bottom: none;
-    }
-
-    .services {
-      background: #edf3fb;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card,
-    .project-card {
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .service-card:hover,
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(7, 26, 51, 0.08);
-    }
-
-    .service-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      background: var(--light-blue);
-      color: var(--blue);
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
-
-    .service-card p,
-    .project-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .skills-wrap {
+    /* SKILLS BADGES */
+    .skills-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 11px;
-      margin-top: 25px;
+      gap: 12px;
     }
 
-    .skill {
-      background: white;
-      border: 1px solid #d8e3f2;
-      border-radius: 30px;
-      padding: 9px 15px;
-      color: #23466f;
-      font-size: 14px;
+    .skill-tag {
+      background-color: var(--accent-light);
+      color: var(--accent);
       font-weight: 600;
+      font-size: 0.88rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid #dbeafe;
     }
 
-    .projects {
-      background: white;
-    }
-
-    .project-card {
-      border-top: 4px solid var(--blue);
-    }
-
-    .project-type {
-      color: var(--blue);
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .project-link {
-      display: inline-block;
-      color: var(--blue);
-      font-weight: bold;
-      margin-top: 17px;
-      font-size: 14px;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    .cta {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      color: white;
-    }
-
-    .cta p {
-      color: #d4e1f2;
-      max-width: 650px;
-      margin: 0 auto 25px;
-    }
-
-    .cta .btn-primary {
-      background: #80bcff;
-      color: #071a33;
+    /* CONTACT SECTION */
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
     }
 
-    .contact-card {
-      overflow-wrap: anywhere;
+    .contact-item h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
     }
 
-    .contact-card h3 {
-      color: var(--navy);
-      font-size: 16px;
-      margin-bottom: 8px;
+    .contact-item p, .contact-item a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-dark);
     }
 
-    .contact-card a {
-      color: var(--blue);
-      font-size: 14px;
-    }
-
+    /* FOOTER */
     footer {
-      background: #041020;
-      color: #c7d5e8;
+      background: var(--primary-dark);
+      color: #94a3b8;
       text-align: center;
-      padding: 25px 0;
-      font-size: 13px;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
     }
 
-    @media (max-width: 800px) {
-      .about-grid {
-        grid-template-columns: 1fr;
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
       }
-
-      .card-grid,
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero {
-        padding: 75px 0;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .card-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
       .nav-links {
-        gap: 13px;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .hero-description {
-        font-size: 16px;
+        display: none;
       }
     }
   </style>
 </head>
-
 <body>
 
+  <!-- NAVIGATION -->
   <header>
     <div class="container">
       <nav>
-        <a class="logo" href="#home">HASSAN<span>.</span>TIJJANI</a>
-
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Expertise</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
+        <div class="logo">HASSAN<span>.</span>TIJJANI</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <p class="eyebrow">Humanitarian Data • MEAL • ICT</p>
-
-          <h1>
-            Hassan Tijjani<br>
-            <span>Data & Information Management Professional</span>
-          </h1>
-
-          <p class="hero-description">
-            Supporting humanitarian and development programmes through
-            reliable data, digital information systems, field operations,
-            data quality assurance and practical ICT support.
-          </p>
-
-          <div class="buttons">
-            <a class="btn btn-primary"
-               href="Hassan_Tijjani_Master_CV.pdf"
-               download>
-              ↓ Download My CV
-            </a>
-
-            <a class="btn btn-outline"
-               href="#contact">
-              Contact Me
-            </a>
-
-            <a class="btn btn-outline"
-               href="https://www.linkedin.com/in/hasan-tijjani-40b210166/"
-               target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn Profile ↗
-            </a>
-          </div>
-
-          <p class="hero-note">
-            Based in Maiduguri, Borno State, Nigeria · Open to suitable
-            humanitarian, data management and ICT opportunities.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Professional Profile</p>
-          <h2>About Me</h2>
-          <p class="section-intro">
-            Combining field experience, digital data skills and
-            information technology to support better programme delivery.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I am a humanitarian data, information management and ICT
-              professional with experience supporting digital data
-              collection, household assessments, beneficiary verification,
-              records management, field operations and data quality
-              activities in North-East Nigeria.
-            </p>
-
-            <p>
-              I work with tools such as KoboToolbox, ODK, Microsoft Excel
-              and Microsoft Access to support data collection, validation,
-              organization and reporting. I also have experience in
-              computer training, troubleshooting and practical technical
-              support.
-            </p>
-
-            <p>
-              My professional interests include Information Management,
-              Data Management, MEAL support, public health programmes,
-              humanitarian response and digital solutions that help teams
-              make informed decisions.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Professional Focus</h3>
-            <ul class="info-list">
-              <li>Information & Data Management</li>
-              <li>Digital Data Collection</li>
-              <li>Data Quality & Verification</li>
-              <li>MEAL & Field Operations Support</li>
-              <li>ICT & Technical Support</li>
-              <li>Humanitarian & Development Programmes</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">What I Bring</p>
-          <h2>Areas of Expertise</h2>
-          <p class="section-intro">
-            Practical skills for organizations that depend on accurate
-            information, efficient field activities and reliable technology.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <article class="service-card">
-            <div class="service-icon">▤</div>
-            <h3>Information Management</h3>
-            <p>
-              Organizing records, maintaining databases, validating
-              information and supporting accurate documentation,
-              reporting and information retrieval.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">✓</div>
-            <h3>Data Quality & Verification</h3>
-            <p>
-              Reviewing records for completeness, inconsistencies,
-              missing values and possible duplicates to improve
-              the reliability of collected data.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">⌘</div>
-            <h3>Digital Data Collection</h3>
-            <p>
-              Supporting mobile data collection, field surveys,
-              household assessments and beneficiary verification
-              using digital collection tools.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">▦</div>
-            <h3>MEAL & Field Support</h3>
-            <p>
-              Supporting monitoring activities, field coordination,
-              data documentation, community engagement and
-              programme reporting.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">⚙</div>
-            <h3>ICT & Technical Support</h3>
-            <p>
-              Computer troubleshooting, software installation,
-              device support, basic connectivity troubleshooting
-              and end-user assistance.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">▧</div>
-            <h3>Computer Training</h3>
-            <p>
-              Supporting digital literacy and practical computer
-              skills, including Microsoft Office, spreadsheets
-              and everyday internet tools.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Technical Toolkit</p>
-          <h2>Skills & Technologies</h2>
-          <p class="section-intro">
-            Tools and capabilities relevant to field data operations,
-            information management and ICT support.
-          </p>
-        </div>
-
-        <div class="skills-wrap">
-          <span class="skill">KoboToolbox</span>
-          <span class="skill">ODK</span>
-          <span class="skill">Microsoft Excel</span>
-          <span class="skill">Microsoft Access</span>
-          <span class="skill">Microsoft Word</span>
-          <span class="skill">PowerPoint</span>
-          <span class="skill">Google Forms</span>
-          <span class="skill">Data Validation</span>
-          <span class="skill">Data Cleaning</span>
-          <span class="skill">Database Management</span>
-          <span class="skill">Digital Data Collection</span>
-          <span class="skill">Data Quality Assurance</span>
-          <span class="skill">Records Management</span>
-          <span class="skill">Reporting</span>
-          <span class="skill">Windows Support</span>
-          <span class="skill">Software Installation</span>
-          <span class="skill">ICT Troubleshooting</span>
-          <span class="skill">Field Operations</span>
-          <span class="skill">Confidential Data Handling</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Professional Work</p>
-          <h2>Selected Areas of Work</h2>
-          <p class="section-intro">
-            Examples of work areas aligned with my experience and
-            professional interests.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <article class="project-card">
-            <p class="project-type">Data Operations</p>
-            <h3>Digital Field Data Collection</h3>
-            <p>
-              Household data collection, field assessments, digital
-              submissions, record verification and data quality checks
-              using KoboToolbox and ODK.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <p class="project-type">Information Management</p>
-            <h3>Data Organization & Reporting</h3>
-            <p>
-              Structured records, spreadsheet-based data organization,
-              database updates and preparation of information to
-              support programme reporting.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <p class="project-type">ICT Support</p>
-            <h3>Digital Skills & Technical Assistance</h3>
-            <p>
-              Computer instruction, Microsoft Office training,
-              software support, device troubleshooting and
-              assistance with everyday technology challenges.
-            </p>
-          </article>
-        </div>
-
-        <p style="margin-top:24px;color:#64748b;font-size:13px;">
-          These are summaries of work areas, not claims of independently
-          published projects. Additional verified work samples can be
-          added as they become available.
-        </p>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <p class="eyebrow">Let's Work Together</p>
-        <h2>Looking for a Reliable Data & ICT Professional?</h2>
-        <p>
-          I welcome opportunities in humanitarian response, information
-          management, data operations, MEAL support and ICT services.
-        </p>
-
-        <div class="buttons" style="justify-content:center;">
-          <a class="btn btn-primary"
-             href="Hassan_Tijjani_Master_CV.pdf"
-             download>
-            Download My CV
-          </a>
-
-          <a class="btn btn-outline"
-             href="mailto:hassantijjani5@gmail.com">
-            Email Me
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Get In Touch</p>
-          <h2>Contact Me</h2>
-          <p class="section-intro">
-            For job opportunities, professional collaboration and
-            enquiries related to data management or ICT support,
-            feel free to contact me.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <a href="mailto:hassantijjani5@gmail.com">
-              hassantijjani5@gmail.com
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <h3>Phone</h3>
-            <a href="tel:+2349017766836">
-              +234 901 776 6836
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/hasan-tijjani-40b210166/"
-               target="_blank"
-               rel="noopener noreferrer">
-              View My LinkedIn Profile ↗
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <a href="https://github.com/hassantijjani5-droid"
-               target="_blank"
-               rel="noopener noreferrer">
-              View My GitHub Profile ↗
-            </a>
-          </div>
-
-          <div class="contact-card">
-            <h3>Location</h3>
-            <p>Maiduguri, Borno State, Nigeria</p>
-          </div>
-
-          <div class="contact-card">
-            <h3>Portfolio</h3>
-            <a href="https://hassantijjani5-droid.github.io/">
-              hassantijjani5-droid.github.io
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <!-- HERO SECTION -->
+  <section class="hero">
     <div class="container">
-      <p>
-        © <span id="year"></span> Hassan Tijjani.
-        Professional Portfolio · Humanitarian Data · MEAL · ICT
+      <span class="hero-badge">Humanitarian Data • MEAL • ICT</span>
+      <h1>Hassan Tijjani</h1>
+      <p>Data & Information Management Professional specializing in digital data collection, data quality assurance, MEAL support, and field ICT operations in North-East Nigeria.</p>
+      <div class="hero-actions">
+        <a href="Hassan_Tijjani_Master_CV.pdf" class="btn btn-primary" download>Download CV</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Combining field experience, information systems, and practical technology support.</p>
+      <p style="max-width: 800px; color: var(--text-muted); font-size: 1.05rem;">
+        I support humanitarian and development programs through accurate data collection, household assessments, beneficiary verification, and information management. Utilizing mobile data gathering tools and relational databases, I ensure high data integrity to help organizations make informed decision-making in complex environments.
       </p>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+  <!-- EXPERTISE SECTION -->
+  <section id="expertise" style="background-color: #ffffff;">
+    <div class="container">
+      <h2 class="section-title">Areas of Expertise</h2>
+      <p class="section-subtitle">Core capabilities brought to monitoring, evaluation, and field operations.</p>
+      
+      <div class="grid-3">
+        <div class="card">
+          <h3>Information & Data Management</h3>
+          <p>Organizing structured records, managing databases, enforcing data integrity, and conducting accurate field reporting.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Data Collection</h3>
+          <p>Designing, deploying, and managing digital mobile surveys for field operations using KoboToolbox and ODK.</p>
+        </div>
+        <div class="card">
+          <h3>Data Quality Assurance</h3>
+          <p>Auditing datasets to remove duplicates, missing values, and inconsistencies, ensuring reliability for analysis.</p>
+        </div>
+        <div class="card">
+          <h3>MEAL & Field Operations</h3>
+          <p>Assisting with field monitoring, household verification, field team coordination, and qualitative/quantitative data tracking.</p>
+        </div>
+        <div class="card">
+          <h3>ICT & Technical Support</h3>
+          <p>Providing hardware troubleshooting, software configuration, operating system maintenance, and end-user support.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Literacy Training</h3>
+          <p>Guiding teams and personnel on basic computer operations, office productivity software, and data entry workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills & Tools</h2>
+      <p class="section-subtitle">Technologies and methodologies used daily.</p>
+      
+      <div class="skills-container">
+        <span class="skill-tag">KoboToolbox</span>
+        <span class="skill-tag">ODK (Open Data Kit)</span>
+        <span class="skill-tag">Microsoft Excel</span>
+        <span class="skill-tag">Microsoft Access</span>
+        <span class="skill-tag">Data Validation & Cleaning</span>
+        <span class="skill-tag">Database Management</span>
+        <span class="skill-tag">Google Forms</span>
+        <span class="skill-tag">MEAL Field Operations</span>
+        <span class="skill-tag">ICT Troubleshooting</span>
+        <span class="skill-tag">Confidential Data Handling</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" style="background-color: #ffffff;">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Reach out for professional opportunities or technical collaborations.</p>
+      
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div class="contact-item">
+            <h4>Location</h4>
+            <p>Maiduguri, Borno State, Nigeria</p>
+          </div>
+          <div class="contact-item">
+            <h4>Email</h4>
+            <p><a href="mailto:hassantijjani5@gmail.com">hassantijjani5@gmail.com</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Phone</h4>
+            <p>+234 901 776 6836</p>
+          </div>
+          <div class="contact-item">
+            <h4>LinkedIn</h4>
+            <p><a href="https://www.linkedin.com/in/hasan-tijjani-40b210166/" target="_blank">LinkedIn Profile ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© Hassan Tijjani. Professional Portfolio · Humanitarian Data, MEAL & ICT</p>
+    </div>
+  </footer>
 
 </body>
 </html>
