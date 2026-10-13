@@ -11,9 +11,8 @@
 
   <style>
     /* =========================================
-       CSS RESET & VARIABLES
-    ========================================= */
-
+   CSS RESET & VARIABLES
+========================================= */
     :root {
       --primary: #1e3a8a;
       --primary-dark: #0f172a;
@@ -264,31 +263,47 @@
       padding-left: 16px;
     }
 
-    #about .section-subtitle {
-      color: #1d4ed8;
-      padding-left: 21px;
+ 
+#about .section-subtitle {
+  color: #1d4ed8;
+  padding-left: 21px;
+}
+
+/* ABOUT PANEL CARD DESIGN */
+.about-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-panel:hover {
+  box-shadow: 0 16px 35px rgba(30, 58, 138, 0.13);
+  transform: translateY(-2px);
+}
+
+.about-panel p {
+  color: #475569;
+  font-size: 1.04rem;
+  line-height: 1.95;
+}  
+
+    .about-heading {
+      color: #1e3a8a;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
     }
 
-    .about-panel {
-      position: relative;
-      background: #ffffff;
-      border: 1px solid #bfdbfe;
-      border-left: 5px solid #2563eb;
-      border-radius: 14px;
-      padding: 32px;
-      box-shadow: 0 12px 30px rgba(30, 58, 138, 0.08);
-    }
-
-    .about-panel p {
-      color: #475569;
-      font-size: 1.04rem;
-      line-height: 1.95;
-    }
-
+    .about-panel p + p {
+      margin-top: 16px;
+    }  
     /* =========================================
        AREAS OF EXPERTISE - NETWORK STYLE CARDS
     ========================================= */
-
     #expertise {
       position: relative;
       overflow: hidden;
@@ -582,10 +597,9 @@
         padding: 28px 23px;
       }
 
-      .about-panel {
+           .about-panel {
         padding: 23px;
       }
-
       .about-panel p {
         font-size: 0.98rem;
       }
@@ -606,10 +620,9 @@
       .skill-tag {
         font-size: 0.84rem;
         padding: 9px 13px;
-      }
+      }   
     }
-
-    /* ACCESSIBILITY: REDUCED MOTION */
+      /* ACCESSIBILITY: REDUCED MOTION */
 
     @media (prefers-reduced-motion: reduce) {
       html {
@@ -670,14 +683,14 @@
           support, and field ICT operations in North-East Nigeria.
         </p>
 
-        <div class="hero-actions">
-          <a
-            href="Hassan_Tijjani_CV_.pdf"
-            class="btn btn-primary"
-            download
-          >
-            Download CV ↓
-          </a>
+<div class="hero-actions">
+ <a
+  href="./Hassan_Tijjani_CV.pdf"
+  class="btn btn-primary"
+  download
+>
+  Download CV ↓
+</a>
 
           <a href="#contact" class="btn btn-secondary">
             Get in Touch →
@@ -688,38 +701,53 @@
     </div>
   </section>
 
-  <!-- =======================================
-       ABOUT ME SECTION
-  ======================================== -->
+  
+<!-- =======================================
+     ABOUT ME SECTION
+======================================== -->
 
-  <section id="about">
-    <div class="container">
+<section id="about">
+  <div class="container">
 
-      <h2 class="section-title">About Me</h2>
+    <h2 class="section-title">About Me</h2>
 
-      <p class="section-subtitle">
-        Combining field experience, information systems,
-        and practical technology support.
+    <p class="section-subtitle">
+      Combining field experience, information systems,
+      and practical technology support.
+    </p>
+
+    <div class="about-panel">
+      <h3 class="about-heading">
+        Humanitarian Data, Information Management &amp; ICT Professional
+      </h3>
+
+      <p>
+        I am a Data and Information Management Professional with
+        experience supporting humanitarian and development programs
+        through digital data collection, field operations,
+        beneficiary verification, data quality assurance, and
+        database management.
       </p>
 
-      <div class="about-panel">
-        <p>
-          I support humanitarian and development programs through
-          digital data collection, household assessments,
-          beneficiary verification, data quality assurance,
-          and information management. I work with mobile data
-          collection platforms and database tools to help maintain
-          accurate, reliable, and organized information. My
-          professional interests include MEAL support, field
-          operations, information management, and ICT services
-          that help organizations make informed decisions and
-          deliver effective programs in complex environments.
-        </p>
-      </div>
+      <p>
+        I work with digital data collection tools such as KoboToolbox
+        and ODK, alongside Microsoft Excel and Access, to support
+        accurate data processing, organized records, reporting,
+        and informed decision-making. My interests also include
+        ICT support, technical troubleshooting, and improving
+        digital workflows.
+      </p>
 
+      <p>
+        I aim to combine field experience, data management
+        capabilities, and practical technology skills to help
+        organizations strengthen operational efficiency,
+        accountability, and program delivery.
+      </p>
     </div>
-  </section>
 
+  </div>
+</section>
   <!-- =======================================
        AREAS OF EXPERTISE
   ======================================== -->
